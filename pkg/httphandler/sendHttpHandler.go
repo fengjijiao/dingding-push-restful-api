@@ -24,7 +24,7 @@ type SendInfo struct {
 		MsgType string `json:"msgtype"`
 	} `json:"msg"` //不超过2048字节
 	ToAllUser  string `json:"to_all_user"`
-	AgentId    string `json:"agent_id"`
+	AgentId    int `json:"agent_id"`
 	DeptIdList string `json:"dept_id_list"`
 	UserIdList string `json:"userid_list"`
 }
@@ -56,8 +56,8 @@ func sendMarkDownHttpHandler(w http.ResponseWriter, hr *http.Request) {
 		return
 	}
 	sendInfo.Msg.MsgType = "markdown"
-	sendInfo.Msg.Title = title
-	sendInfo.Msg.Text = body
+	sendInfo.Msg.Markdown.Title = title
+	sendInfo.Msg.Markdown.Text = body
 	sendInfo.AgentId = conf.Config.DingdingAgentId
 	param, err := json.Marshal(&sendInfo)
 	if err != nil {

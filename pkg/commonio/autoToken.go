@@ -5,5 +5,5 @@ import (
 )
 
 func GetTokenAuto() (*AccessTokenInfo, error) {
-	return GetToken(conf.Config.WechatCorpId, conf.Config.WechatCorpSecret)
+	return GetToken(conf.Config.DingdingAppKey, conf.Config.DingdingAppSecret)
 }
