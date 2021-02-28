@@ -10,4 +10,4 @@ send dingding notification via http restful api
 
 ## api
 
-1. ../send send wechat notification handler (post `title=%s&body=%s&touser=%s`)
+1. ../send send wechat notification handler (post `title=%s&body=%s&touser=%s&toparty=%s` || `context=%s&touser=%s&toparty=%s`)
